@@ -30,8 +30,15 @@ We also need this repo and the files needed to build an rpm package:
 We also need couple of packages, provided by 3rd party repo. As this openss is not the primary subject, I wont explain how to build and update your openssl version that support quic protocol (It's called quictls). Also, this is not a simple procedure as many packages rely on openssl that is buldled by your OS vendor. 
 
 The packages are built by [CodeIT](https://codeit.guru/):\
-[openssl-quic-libs](https://repo.codeit.guru/packages/centos/8/x86_64/openssl-quic-libs-1.1.1t-1.codeit.el8.x86_64.rpm)
+[openssl-quic-libs](https://repo.codeit.guru/packages/centos/8/x86_64/openssl-quic-libs-1.1.1t-1.codeit.el8.x86_64.rpm)\
 [openssl-quic-devel](https://repo.codeit.guru/packages/centos/8/x86_64/openssl-quic-devel-1.1.1t-1.codeit.el8.x86_64.rpm)
+
+The second package (`openssl-quic-devel`) will conflict with `openssl-devel`, so we need to remove it and install `openssl-quic-devel`:\
+```bash
+rpm -e openssl-devel --nodeps
+yum install https://repo.codeit.guru/packages/centos/8/x86_64/openssl-quic-libs-1.1.1t-1.codeit.el8.x86_64.rpm
+yum install https://repo.codeit.guru/packages/centos/8/x86_64/openssl-quic-devel-1.1.1t-1.codeit.el8.x86_64.rpm
+```
 
 
 
