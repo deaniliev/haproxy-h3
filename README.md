@@ -51,6 +51,15 @@ spectool -R -g ~/rpmbuild/SPECS/haproxy.spec
 rpmlint ~/rpmbuild/SPECS/haproxy.spec
 rpmbuild -ba ~/rpmbuild/SPECS/haproxy.spec
 ```
-After the proccess is complete, you can find haproxy build in `~/rpmbuild/RPMS` folder.
+After the proccess is complete, you can find haproxy rpm package in `~/rpmbuild/RPMS` folder.
 
 **Remember!** If you plan to install this package to another system, you will need to have `openssl-quic-libs` package installed!
+
+## Post install settings
+
+To enable http3 on haproxy you will need the following added to your frontends where applicable:
+
+```ini
+bind quic4@:443 ssl crt /path/to/certificates alpn h3
+http-response set-header alt-svc "h3=\":443\"; ma=86400, h3-29=\":443\"; ma=86400"
+```
