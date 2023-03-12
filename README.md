@@ -27,7 +27,7 @@ yum install -y rpm-build rpmdevtools pcre-devel openssl-devel zlib-devel redhat-
                gcc gcc-c++ make libstdc++-devel rpmlint \
                lua-devel systemd-devel systemd-devel pcre2-devel
 ```
-We also need couple of packages, provided by 3rd party repo. As this openss is not the primary subject, I wont explain how to build and update your openssl version that support quic protocol (It's called quictls). Also, this is not a simple procedure as many packages rely on openssl that is buldled by your OS vendor. 
+We also need couple of packages, provided by 3rd party repo. As openssl is not the primary subject, I won't explain how to build and update your openssl version that support quic protocol (It's called quictls). Also, this is not a simple procedure as many packages rely on openssl that is bundled by your OS vendor. 
 
 The packages are built by [CodeIT](https://codeit.guru/):\
 [openssl-quic-libs](https://repo.codeit.guru/packages/centos/8/x86_64/openssl-quic-libs-1.1.1t-1.codeit.el8.x86_64.rpm)\
