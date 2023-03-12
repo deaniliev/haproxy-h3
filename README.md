@@ -44,6 +44,13 @@ Next, we need to prepare our environment and start the build:
 
 ```bash
 cd ~
-
+rpmdev-setuptree
+cp -a haproxy-h3/haproxy-build/* rpmbuild/SOURCES
+mv rpmbuild/SOURCES/haproxy.spec rpmbuild/SPECS
+spectool -R -g ~/rpmbuild/SPECS/haproxy.spec
+rpmlint ~/rpmbuild/SPECS/haproxy.spec
+rpmbuild -ba ~/rpmbuild/SPECS/haproxy.spec
 ```
+After the proccess is complete, you can find haproxy build in `~/rpmbuild/RPMS` folder.
 
+**Remember!** If you plan to install this package to another system, you will need to have `openssl-quic-libs` package installed!
