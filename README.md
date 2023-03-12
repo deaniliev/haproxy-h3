@@ -39,7 +39,7 @@ rpm -e openssl-devel --nodeps
 yum install https://repo.codeit.guru/packages/centos/8/x86_64/openssl-quic-libs-1.1.1t-1.codeit.el8.x86_64.rpm
 yum install https://repo.codeit.guru/packages/centos/8/x86_64/openssl-quic-devel-1.1.1t-1.codeit.el8.x86_64.rpm
 ```
-We also need this repo and the files needed to build an rpm package:
+I tweaked a spec file to enable quic, which is included in this repo. We need it to compile haproxy 2.6 lts from source: 
 ```bash
 cd ~
 git clone https://github.com/deaniliev/haproxy-h3.git
