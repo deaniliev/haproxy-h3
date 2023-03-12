@@ -53,7 +53,7 @@ rpmbuild -ba ~/rpmbuild/SPECS/haproxy.spec
 ```
 After the proccess is complete, you can find haproxy rpm package in `~/rpmbuild/RPMS` folder.
 
-**Remember!** If you plan to install this package to another system, you will need to have `openssl-quic-libs` package installed!
+**Remember!** If you plan to install this package on another system, you will need to have `openssl-quic-libs` package installed!
 
 ## Post install settings
 
