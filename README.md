@@ -37,7 +37,13 @@ yum install https://repo.codeit.guru/packages/centos/8/x86_64/openssl-quic-devel
 We also need this repo and the files needed to build an rpm package:
 ```bash
 cd ~
-git clone https://github.com/deaniliev/haproxy-h3.git`
+git clone https://github.com/deaniliev/haproxy-h3.git
 ```
 
+Next, we need to prepare our environment and start the build:
+
+```bash
+cd ~
+
+```
 
