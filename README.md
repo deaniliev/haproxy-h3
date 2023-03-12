@@ -4,8 +4,11 @@
 
 ### 1. README
 
-Q. Why?\
+Q. Why do we need to compile from source?\
 A. Haproxy does not support http3 and quic protocol by default, so we need to compile.
+
+Q. What version of Haproxy will be used?\
+A. I will use Haproxy 2.6 LTS. Http3 was experimentally added to haproxy 2.4, and is supported in version 2.6 LTS.
 
 Q. What OS is required?\
 A. I am explaining this for Almalinux 8, as is quite powerful and free alternative to RedHat/CentOS
