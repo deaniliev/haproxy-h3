@@ -7,10 +7,13 @@
 Q. Why?\
 A. Haproxy does not support http3 and quic protocol by default, so we need to compile.
 
+Q. What OS is required?\
+A. I am explaining this for Almalinux 8, as is quite powerful and free alternative to RedHat/CentOS
+
 Q. How reliable is this for production?\
 A. I do not recommend this for production web sites because Http3 and quic are quite new and most of the web servers do not support it yet. However, haproxy supports it and you can use it to proxy your traffic to a regular web server, such as Apache or Nginx.
 
-### 3. Requirements
+### 2. Requirements
 
 As we need to compile Haproxy to support quic, we need develpment packages to do this:
 
@@ -23,4 +26,10 @@ yum install -y rpm-build rpmdevtools pcre-devel openssl-devel zlib-devel redhat-
 We also need this repo and the files needed to build an rpm package:
 
 `git clone https://github.com/deaniliev/haproxy-h3.git`
+
+We also need couple of packages, provided by 3rd party repo. As this openss is not the primary subject, I wont explain how to build and update your openssl version that support quic protocol (It's called quictls). Also, this is not a simple procedure as many packages rely on openssl that is buldled by your OS vendor. 
+
+The packages are built by [CodeIT](## https://codeit.guru/):\
+
+
 
