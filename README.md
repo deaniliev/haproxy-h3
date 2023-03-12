@@ -21,6 +21,8 @@ A. I do not recommend this for production web sites because Http3 and quic are q
 As we need to compile Haproxy to support quic, we need develpment packages to do this:
 
 ```bash
+yum install epel-release yum-utils
+dnf config-manager --set-enabled powertools
 yum install -y rpm-build rpmdevtools pcre-devel openssl-devel zlib-devel redhat-rpm-config \
                gcc gcc-c++ make libstdc++-devel rpmlint \
                lua-devel systemd-devel systemd-devel pcre2-devel
